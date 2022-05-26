@@ -7,26 +7,26 @@
 }
 
 html {
-  /*==============cores============*/
+  --black: #0d114f;
+  --white: #fafafa;
+  --red: #e83f5b;
+  --light-blue: #e0ecff;
+  --blue: #3485ff;
+  --background: #f6faff;
+  --overlay: #040911;
+  --icons-details: #a5b0c1;
 
-  --black: hsl(236, 72%, 18%);
-  --white: hsl(0, 0%, 98%);
-  --red: hsl(350, 79%, 58%);
-  --light-blue: hsl(217, 100%, 94%);
-  --blue: hsl(216, 100%, 60%);
-  --background: hsl(225, 100%, 99%);
-  --overlay: hsl(217, 62%, 4%);
-  --icons-details: hsl(216, 18%, 70%);
+  --grey-dark: #4d5e77;
+  --grey-blue: #a1b2cd;
+  --grey-light: #e5eaf1;
+  --grey-medium: #eaecf2;
 
-  --grey-dark: hsl(216, 18%, 70%);
-  --grey-blue: hsl(217, 31%, 72%);
-  --grey-medium: hsl(216, 21%, 86%);
-  --grey-light: hsl(215, 30%, 92%);
-
-  font-size: 62.5%; /* 1rem = 10px */
+  /* 1rem = 16px (User Agent) = 100% (User Agent) */
+  font-size: 62.5%; /* 10px */
 }
 
 body {
+  display: flex;
   height: 100vh;
   background: var(--background);
 }
@@ -37,7 +37,9 @@ input,
 textarea {
   /* intervalo de tamanho */
   font-size: clamp(14px, 1.6rem, 2vw);
+
   font-family: 'Open Sans', sans-serif;
+  /* font-family: 'Poppins', sans-serif; */
 }
 
 .content {
@@ -57,16 +59,17 @@ textarea {
   border-width: 0;
 }
 
+/*--------- input and buttons*/
 input,
 button,
 .button {
-  height: 5rem;
   border-radius: 0.8rem;
+  height: 5rem;
 }
 
 button,
 .button {
-  font-family: 'Poppins', sans-serif;
+  font-family: 'Poppins';
   font-weight: 500;
   line-height: 0;
 
@@ -74,8 +77,8 @@ button,
   align-items: center;
   justify-content: center;
 
-  /*background: var(--blue);
-  color: var(--white);*/
+  background: var(--blue);
+  color: var(--white);
 
   transition: filter 0.2s;
 
@@ -87,6 +90,12 @@ button:hover,
   filter: brightness(1.2);
 }
 
+button > img,
+.button > img {
+  margin-right: 1rem;
+  width: 2rem;
+}
+
 button.outlined,
 .button.outlined {
   background: var(--white);
@@ -94,11 +103,19 @@ button.outlined,
   border: 0.2rem solid var(--blue);
 }
 
-button > img,
-.button > img {
-  margin-right: 1rem;
-  width: 2rem;
+button.red,
+.button.red {
+  background: var(--red);
+  color: var(--white);
 }
+
+button.grey,
+.button.grey {
+  background: var(--grey-light);
+  color: var(--grey-dark);
+}
+
+/*** HEADER ****/
 
 .content header {
   width: 80%;
